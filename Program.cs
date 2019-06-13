@@ -10,24 +10,22 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
-            // Read input of user
-            Console.Write("Enter a number: ");
-            string strInput = Console.ReadLine();
-            int intInput1 = Int32.Parse(strInput);
-            Console.Write("Enter your second number: ");
-            string strInput2 = Console.ReadLine();
-            int intInput2 = Int32.Parse(strInput2);
-            Console.Write("Your calculated number is ");
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(Add(intInput1, intInput2));
+            Console.WriteLine("Result: " + Calculate());
             Console.Read();
         }
 
-        public static int Add(int num1, int num2)
+        public static int Calculate()
         {
-            return num1 + num2;
-        }
-            
+            Console.Write("Please enter the first number: ");
+            string numberInput = Console.ReadLine();
+            Console.Write("Please enter the second number: ");
+            string numberInput2 = Console.ReadLine();
 
+            int num1 = Int32.Parse(numberInput);
+            int num2 = Int32.Parse(numberInput2);
+            int result = num1 + num2;
+
+            return result;
+        }
     }
 }
