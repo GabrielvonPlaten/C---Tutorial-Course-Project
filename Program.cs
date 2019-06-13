@@ -10,19 +10,26 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
-            WriteSomething();
-            WriteSomethingSpecific("Hello My method!");
-        }
-        
-        public static void WriteSomething()
-        {
-            Console.WriteLine("I am called from a method");
+            Console.WriteLine(Add(15, 20));
+            Console.WriteLine(Multiply(15, 5));
+            Console.WriteLine(Divide(25, 13));
+            Console.Read();
         }
 
-        public static void WriteSomethingSpecific(string myText)
+        public static int Add(int num1, int num2)
         {
-            Console.WriteLine(myText);
-            Console.Read();
+            return num1 + num2;
+        }
+
+        public static int Multiply(int num1, int num2)
+        {
+            return num1 * num2;
+        }
+
+        // Return the decimals of the calculated value
+        public static double Divide(double num1, double num2)
+        {
+            return num1 / num2;
         }
     }
 }
