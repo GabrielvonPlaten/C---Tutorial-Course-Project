@@ -6,20 +6,19 @@ using System.Threading.Tasks;
 
 namespace Hello_World
 {
-    // Class names should have the cameCase naming convention
     class Program
     {
+        // Contants as fields
+        // They are inside the class but outside the methods
+        const double PI = 3.14;
+        const int weeks = 52, months = 12;
+        const string birthday = "1995-09-06";
+        const string birthday2 = "06-09-1995";
+
         static void Main(string[] args)
         {
-            string myString = "15";
-            string mySecondString = "13";
-            int num1 = Int32.Parse(myString);
-            int num2 = Int32.Parse(mySecondString);
-            int resultInt = num1 + num2;
-
-            Console.WriteLine(resultInt);
+            Console.WriteLine("I was born at {0}. In another format: {1}", birthday, birthday2);
             Console.Read();
-            
         }
     }
 }
