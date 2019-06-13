@@ -11,12 +11,24 @@ namespace Hello_World
         // Starting point of my program
         static void Main(string[] args)
         {
-            // Console.ForegroundColor = ConsoleColor.Yellow; // Colors must be on top
-            // Console.BackgroundColor = ConsoleColor.DarkBlue;
-            // Console.Clear();
-            Console.WriteLine("Hello, world");
-            Console.WriteLine("Hello Gabriel von Platen!");
-            Console.Read(); // The console is kept open until Enter is pressed
+            int num1 = 13;
+            int num2 = 24;
+            int num3; // 0
+            int sum = num1 + num2;
+            double d1 = 3.5;
+            double d2 = 1.337;
+            double sumd = d1 / d2;
+
+            float f1 = 2.4f;
+            // Use casting
+            // int divDandI = num1 / d1; Cannot divide one data type with another which is different (int and double).
+
+            num3 = 15;
+
+            Console.WriteLine("The sum of " + num1 + " and " + num2 + " is " + sum);
+            Console.WriteLine(num1);
+            Console.WriteLine("The sum of the doubles is " + sumd);
+            Console.Read();
         }
     }
 }
