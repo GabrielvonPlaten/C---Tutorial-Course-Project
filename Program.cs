@@ -10,9 +10,16 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(Add(15, 20));
-            Console.WriteLine(Multiply(15, 5));
-            Console.WriteLine(Divide(25, 13));
+            // Read input of user
+            Console.Write("Enter a number: ");
+            string strInput = Console.ReadLine();
+            int intInput1 = Int32.Parse(strInput);
+            Console.Write("Enter your second number: ");
+            string strInput2 = Console.ReadLine();
+            int intInput2 = Int32.Parse(strInput2);
+            Console.Write("Your calculated number is ");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine(Add(intInput1, intInput2));
             Console.Read();
         }
 
@@ -20,16 +27,7 @@ namespace Hello_World
         {
             return num1 + num2;
         }
+            
 
-        public static int Multiply(int num1, int num2)
-        {
-            return num1 * num2;
-        }
-
-        // Return the decimals of the calculated value
-        public static double Divide(double num1, double num2)
-        {
-            return num1 / num2;
-        }
     }
 }
