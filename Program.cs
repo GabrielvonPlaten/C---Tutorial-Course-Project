@@ -30,7 +30,10 @@ namespace Hello_World
             {
                 Console.WriteLine("The value was empty. Null.");
             }
-
+            finally
+            {
+                Console.WriteLine("Execution of code ended.");
+            }
             Console.Read();
         }
 
