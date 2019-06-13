@@ -8,16 +8,20 @@ namespace Hello_World
 {
     class Program
     {
-        // Contants as fields
-        // They are inside the class but outside the methods
-        const double PI = 3.14;
-        const int weeks = 52, months = 12;
-        const string birthday = "1995-09-06";
-        const string birthday2 = "06-09-1995";
-
         static void Main(string[] args)
         {
-            Console.WriteLine("I was born at {0}. In another format: {1}", birthday, birthday2);
+            WriteSomething();
+            WriteSomethingSpecific("Hello My method!");
+        }
+        
+        public static void WriteSomething()
+        {
+            Console.WriteLine("I am called from a method");
+        }
+
+        public static void WriteSomethingSpecific(string myText)
+        {
+            Console.WriteLine(myText);
             Console.Read();
         }
     }
