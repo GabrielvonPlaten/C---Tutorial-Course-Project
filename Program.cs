@@ -10,22 +10,29 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Result: " + Calculate());
+            Console.Write("Please enter a number: ");
+            string userInput = Console.ReadLine();
+
+            try
+            {
+                int userInputAsInt = int.Parse(userInput);
+                Console.WriteLine("Your number is " + userInputAsInt);
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Your input was not a number.");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine("Overflow.");
+            }
+            catch (ArgumentNullException)
+            {
+                Console.WriteLine("The value was empty. Null.");
+            }
+
             Console.Read();
         }
 
-        public static int Calculate()
-        {
-            Console.Write("Please enter the first number: ");
-            string numberInput = Console.ReadLine();
-            Console.Write("Please enter the second number: ");
-            string numberInput2 = Console.ReadLine();
-
-            int num1 = Int32.Parse(numberInput);
-            int num2 = Int32.Parse(numberInput2);
-            int result = num1 + num2;
-
-            return result;
-        }
     }
 }
