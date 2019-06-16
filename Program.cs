@@ -8,42 +8,34 @@ namespace Hello_World
 {
     class Program
     {
-        static string username;
-        static string password;
+        static int highscore = 300;
+        static string highscorePlayer = "Gabriel";
 
         static void Main(string[] args)
         {
-            int age = 15;
-            switch (age)
-            {
-                case 15:
-                    Console.WriteLine("Too young.");
-                    break;
-                case 25:
-                    Console.WriteLine("Old enough");
-                    break;
-                default:
-                    Console.WriteLine("Cannot calculate");
-                    break;
-            }
-
-            string username = "Gabriel";
-
-            switch (username)
-            {
-                case "Gabriel":
-                    Console.WriteLine("Your name is Gabriel");
-                    break;
-                case "Root":
-                    Console.WriteLine("Your name is Root");
-                    break;
-                default:
-                    Console.WriteLine("Could not read usename");
-                    break;
-            }
-
+            CheckHighScore(250, "Maria");
+            CheckHighScore(315, "Michael");
+            CheckHighScore(350, "John");
+            CheckHighScore(190, "Denis");
             Console.Read();
         }
 
+        public static void CheckHighScore(int score, string playerName)
+        {
+            if (score > highscore)
+            {
+                highscore = score;
+                highscorePlayer = playerName;
+
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("New highscore is " + score + "!");
+                Console.WriteLine("It is now held by " + playerName + "!");
+                Console.ForegroundColor = ConsoleColor.White;
+            } else
+            {
+                Console.WriteLine("The old highscore could not be broken");
+                Console.WriteLine("The highscore is still " + highscore + " and it is held by " + highscorePlayer);
+            }
+        }
     }
 }
