@@ -10,64 +10,33 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
-            int num1 = 5;
-            int num2 = 3;
-            int num3;
+            Console.Write("Insert the temperature: ");
+            string temperature = Console.ReadLine();
+            int numTemp;
+            int number;
 
-            // unary operator
-            num3 = -num1;
-            Console.WriteLine("Num3 is {0}", num3);
+            // TryParse outputs a number into a variable and return true if it succeeds, otherwise returns false
+            if (int.TryParse(temperature, out number))
+            {
+                numTemp = number;
+            } else
+            {
+                numTemp = 0;
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("An invalid value was sent. Temperature was set to 0 by default.");
+            }
 
-            bool isSunny = true;
-            Console.WriteLine("is sunny? {0}", !isSunny);
-
-            int num = 0;
-            num++;
-            Console.WriteLine("Num is {0}", num); // 1
-            Console.WriteLine("Num is {0}", num++); // 1 | post increment
-            Console.WriteLine("Num is {0}", ++num); // 3 | pre increment
-
-            // decrement operator
-            num--;
-            Console.WriteLine("Num is {0}", num); // 2
-            Console.WriteLine("Num is {0}", num--); // 2
-            Console.WriteLine("Num is {0}", --num); // 0
-
-            double result;
-            double doubleNum1 = num1; 
-            double doubleNum2 = num2;
-
-            result = num1 + num2;
-            Console.WriteLine("Result of num1({0}) + num2({1}) is {2}", num1, num2, result); // 8
-            result = num1 - num2;
-            Console.WriteLine("Result of num1({0}) - num2({1}) is {2}", num1, num2, result); // 2
-            result = num1 * num2;
-            Console.WriteLine("Result of num1({0}) * num2({1}) is {2}", num1, num2, result); // 15
-            result = doubleNum1 / doubleNum2;
-            Console.WriteLine("Result of num1({0}) / num2({1}) is {2}", num1, num2, result); // 1
-            result = num1 % num2;
-            Console.WriteLine("Result of num1({0}) % num2({1}) is {2}", num1, num2, result); // 1
-
-            bool isLower;
-            isLower = num1 > num2;
-            Console.WriteLine("Result of {0} > {1} is {2}", num1, num2, isLower);
-
-            // equality operator
-            bool isEqual;
-            isEqual = num1 == num2;
-            Console.WriteLine("Result of {0} == {1} is {2}", num1, num2, isEqual);
-
-            isEqual = num1 != num2;
-            Console.WriteLine("Result of {0} != {1} is {2}", num1, num2, isEqual);
-
-            // Conditional operator
-            bool isLowerAndSunny;
-
-            isLowerAndSunny = isLower && isSunny;
-            Console.WriteLine("Result of {0} && {1} is {2}", isLower, isSunny, isLowerAndSunny);
-
-            isLowerAndSunny = isLower || isSunny;
-            Console.WriteLine("Result of {0} || {1} is {2}", isLower, isSunny, isLowerAndSunny);
+            Console.ForegroundColor = ConsoleColor.White;
+            if (numTemp < 20)
+            {
+                Console.WriteLine("The temperature is {0}", numTemp);
+            } else if (numTemp == 20)
+            {
+                Console.WriteLine("It's {0} degress C", numTemp);
+            } else
+            {
+                Console.WriteLine("It's mildly warm. {0} C", numTemp);
+            }
 
             Console.Read();
         }
