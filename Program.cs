@@ -10,32 +10,22 @@ namespace Hello_World
     {
         static void Main(string[] args)
         {
-            Console.Write("Insert the temperature: ");
-            string temperature = Console.ReadLine();
-            int numTemp;
-            int number;
+            Console.Write("Enter your username: ");
+            bool isAdmin = true;
+            bool isRegistered = true;
+            string username = "";
+            username = Console.ReadLine();
 
-            // TryParse outputs a number into a variable and return true if it succeeds, otherwise returns false
-            if (int.TryParse(temperature, out number))
+            if (isRegistered && username != "" && username.Equals("Admin"))
             {
-                numTemp = number;
-            } else
-            {
-                numTemp = 0;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("An invalid value was sent. Temperature was set to 0 by default.");
+                Console.WriteLine("Welcome back!");
+                Console.WriteLine("Hi there, Admin!");
+                Console.WriteLine("Looged in as {0}", username); 
             }
 
-            Console.ForegroundColor = ConsoleColor.White;
-            if (numTemp < 20)
+            if (isAdmin || isRegistered)
             {
-                Console.WriteLine("The temperature is {0}", numTemp);
-            } else if (numTemp == 20)
-            {
-                Console.WriteLine("It's {0} degress C", numTemp);
-            } else
-            {
-                Console.WriteLine("It's mildly warm. {0} C", numTemp);
+                Console.WriteLine("You are logged in");
             }
 
             Console.Read();
