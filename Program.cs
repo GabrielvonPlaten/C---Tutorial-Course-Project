@@ -13,44 +13,36 @@ namespace Hello_World
 
         static void Main(string[] args)
         {
-            Registration();
-            Login();
-            Console.Read();
-        }
-
-        public static void Registration()
-        {
-            Console.WriteLine("Registration.");
-            Console.Write("Enter your username: ");
-            username = Console.ReadLine();
-            Console.Write("Your password: ");
-            password = Console.ReadLine();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("Registration completed!");
-            Console.ForegroundColor = ConsoleColor.White;
-            Console.WriteLine("------------------------");
-        }
-
-        public static void Login()
-        {
-            Console.WriteLine("Login.");
-            Console.Write("Enter your username: ");
-            if (username == Console.ReadLine())
+            int age = 15;
+            switch (age)
             {
-                Console.WriteLine("Enter your password");
-                if (password == Console.ReadLine())
-                {
-                    Console.ForegroundColor = ConsoleColor.Green;
-                    Console.WriteLine("Logged in!");
-                    Console.ForegroundColor = ConsoleColor.White;
-                } else
-                {
-                    Console.WriteLine("Login failed");
-                }
-            } else
-            {
-                Console.WriteLine("Login failed");
+                case 15:
+                    Console.WriteLine("Too young.");
+                    break;
+                case 25:
+                    Console.WriteLine("Old enough");
+                    break;
+                default:
+                    Console.WriteLine("Cannot calculate");
+                    break;
             }
+
+            string username = "Gabriel";
+
+            switch (username)
+            {
+                case "Gabriel":
+                    Console.WriteLine("Your name is Gabriel");
+                    break;
+                case "Root":
+                    Console.WriteLine("Your name is Root");
+                    break;
+                default:
+                    Console.WriteLine("Could not read usename");
+                    break;
+            }
+
+            Console.Read();
         }
 
     }
