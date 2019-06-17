@@ -8,34 +8,22 @@ namespace Hello_World
 {
     class Program
     {
-        static int highscore = 300;
-        static string highscorePlayer = "Gabriel";
 
         static void Main(string[] args)
         {
-            CheckHighScore(250, "Maria");
-            CheckHighScore(315, "Michael");
-            CheckHighScore(350, "John");
-            CheckHighScore(190, "Denis");
+            int temperature = 500;
+            string stateOfMatter;
+
+            //if (temperature < 0)
+            //    stateOfMatter = "Solid";
+            //else
+            //    stateOfMatter = "Liquid";
+
+            // Ternary operators
+            stateOfMatter = temperature < 0 ? "Solid" : temperature > 100 ? "Gas" : "Liquid";
+
+            Console.WriteLine("It is {0} degrees C and the state of matter is {1}", temperature, stateOfMatter);
             Console.Read();
-        }
-
-        public static void CheckHighScore(int score, string playerName)
-        {
-            if (score > highscore)
-            {
-                highscore = score;
-                highscorePlayer = playerName;
-
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("New highscore is " + score + "!");
-                Console.WriteLine("It is now held by " + playerName + "!");
-                Console.ForegroundColor = ConsoleColor.White;
-            } else
-            {
-                Console.WriteLine("The old highscore could not be broken");
-                Console.WriteLine("The highscore is still " + highscore + " and it is held by " + highscorePlayer);
-            }
         }
     }
 }
