@@ -11,18 +11,16 @@ namespace Hello_World
 
         static void Main(string[] args)
         {
-
-            int counter = 0;
-            string enteredText = "";
-            while(enteredText.Equals(""))
+            for(int counter = 0; counter < 10; counter++)
             {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("Please enter to increase amount by one.");
-                Console.ForegroundColor = ConsoleColor.White;
-                enteredText = Console.ReadLine();
 
-                counter++;
-                Console.WriteLine("Current people count is {0}", counter);
+                if (counter %2 ==0)
+                {
+                    Console.WriteLine("Odd number.");
+                    //break;
+                    continue;
+                }
+                Console.WriteLine(counter);
             };
 
             Console.Read();
