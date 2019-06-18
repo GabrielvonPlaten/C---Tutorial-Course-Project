@@ -11,18 +11,16 @@ namespace Hello_World
 
         static void Main(string[] args)
         {
-            int temperature = 500;
-            string stateOfMatter;
+            //for(int counter = 0; counter < 50; counter += 5)
+            //{
+            //    Console.WriteLine(counter + 5);
+            //}
 
-            //if (temperature < 0)
-            //    stateOfMatter = "Solid";
-            //else
-            //    stateOfMatter = "Liquid";
+            for(int counter = 1; counter < 20; counter+= 2)
+            {
+                Console.WriteLine(counter);
+            }
 
-            // Ternary operators
-            stateOfMatter = temperature < 0 ? "Solid" : temperature > 100 ? "Gas" : "Liquid";
-
-            Console.WriteLine("It is {0} degrees C and the state of matter is {1}", temperature, stateOfMatter);
             Console.Read();
         }
     }
