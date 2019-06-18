@@ -11,16 +11,21 @@ namespace Hello_World
 
         static void Main(string[] args)
         {
-            //for(int counter = 0; counter < 50; counter += 5)
-            //{
-            //    Console.WriteLine(counter + 5);
-            //}
+            
+            int lengthOfText = 0;
+            string wholeText = "";
 
-            for(int counter = 1; counter < 20; counter+= 2)
+            do
             {
-                Console.WriteLine(counter);
-            }
+                Console.Write("Please enter a name:");
+                string nameOfAFriend = Console.ReadLine();
+                int currentLength = nameOfAFriend.Length;
+                lengthOfText += currentLength;
+                wholeText = nameOfAFriend;
+                
+            } while (lengthOfText < 20);
 
+            Console.Write("Thank you. " + wholeText);
             Console.Read();
         }
     }
