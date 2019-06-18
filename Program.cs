@@ -11,21 +11,20 @@ namespace Hello_World
 
         static void Main(string[] args)
         {
-            
-            int lengthOfText = 0;
-            string wholeText = "";
 
-            do
+            int counter = 0;
+            string enteredText = "";
+            while(enteredText.Equals(""))
             {
-                Console.Write("Please enter a name:");
-                string nameOfAFriend = Console.ReadLine();
-                int currentLength = nameOfAFriend.Length;
-                lengthOfText += currentLength;
-                wholeText = nameOfAFriend;
-                
-            } while (lengthOfText < 20);
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Please enter to increase amount by one.");
+                Console.ForegroundColor = ConsoleColor.White;
+                enteredText = Console.ReadLine();
 
-            Console.Write("Thank you. " + wholeText);
+                counter++;
+                Console.WriteLine("Current people count is {0}", counter);
+            };
+
             Console.Read();
         }
     }
