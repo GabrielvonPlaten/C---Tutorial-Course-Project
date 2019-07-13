@@ -12,22 +12,12 @@ namespace Hello_World
         static void Main(string[] args)
         {
             // Create a new class instance
-            Human gabriel = new Human();
-            // Access public class variables
-            gabriel.firstName = "Gabriel";
-            gabriel.lastName = "von Platen";
-            gabriel.profession = "Web Developer";
+            Human gabriel = new Human("Gabriel", "von Platen", "Web Developer", 23);
             // Call public class methods
             gabriel.IntroduceMyself();
-            gabriel.Profession();
 
-            Human michael = new Human();
-            michael.firstName = "Michael";
-            michael.lastName = "Smith";
+            Human michael = new Human("Michael", "Smith", "Sales Man", 34);
             michael.IntroduceMyself();
-
-            Human sara = new Human();
-            sara.IntroduceMyself();
 
             Console.ReadKey();
         }

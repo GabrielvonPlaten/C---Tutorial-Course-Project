@@ -10,19 +10,23 @@ namespace Hello_World
     class Human
     {
         // Member variable
-        public string firstName = "{Placeholder Name}";
-        public string lastName = "{Placeholder Lastname}";
-        public string profession = "{Placeholder Profession}";
+        private string firstName;
+        private string lastName;
+        private string profession;
+        private int age;
+
+        // Constructor
+        public Human(string firstName, string lastName, string profession, int age)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.profession = profession;
+            this.age = age;
+        }
 
         public void IntroduceMyself()
         {
-            Console.WriteLine("Hi, my name is {0} {1}", firstName, lastName);
-
-        }
-
-        public void Profession()
-        {
-            Console.WriteLine("I am a {0}", profession);
+            Console.WriteLine("Hi, my name is {0} {1}. I'm {2} years old and I'm a {3}", firstName, lastName, age, profession);
         }
     }
 }
