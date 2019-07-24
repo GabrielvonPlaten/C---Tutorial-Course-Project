@@ -15,7 +15,31 @@ namespace Hello_World
         private string profession;
         private int age;
 
-        // Constructor
+        // Default consturctor
+        public Human()
+        {
+            Console.WriteLine("Constructor called. Object Created");   
+        }
+
+        public Human(string firstName, string lastName, string profession)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.profession = profession;
+        }
+
+        public Human(string firstName)
+        {
+            this.firstName = firstName;
+        }
+
+        public Human(string firstName, string lastName)
+        {
+            this.firstName = firstName;
+            this.lastName = lastName;
+        }
+
+        // Paramiterized constructor
         public Human(string firstName, string lastName, string profession, int age)
         {
             this.firstName = firstName;
@@ -24,9 +48,25 @@ namespace Hello_World
             this.age = age;
         }
 
+
         public void IntroduceMyself()
         {
-            Console.WriteLine("Hi, my name is {0} {1}. I'm {2} years old and I'm a {3}", firstName, lastName, age, profession);
+            if (age != 0 && lastName != null && lastName != null && profession != null)
+            {
+                Console.WriteLine("Hi, my name is {0} {1}. I'm {2} years old and I'm a {3}", firstName, lastName, age, profession);
+            }
+            else if(firstName!= null && lastName != null)
+            {
+                Console.WriteLine("Hi, my name is {0} {1}", firstName, lastName);
+            }
+            else if(firstName != null && lastName != null && profession != null)
+            {
+                Console.WriteLine("Hi, my name is {0} {1}, and I'm a {2}", firstName, lastName, profession);
+            }
+            else if(firstName != null)
+            {
+                Console.WriteLine("Hi, my name is {0}", firstName);
+            }
         }
     }
 }

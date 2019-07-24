@@ -16,8 +16,17 @@ namespace Hello_World
             // Call public class methods
             gabriel.IntroduceMyself();
 
-            Human michael = new Human("Michael", "Smith", "Sales Man", 34);
+            Human michael = new Human("Michael", "Smith", "Sales Man");
             michael.IntroduceMyself();
+
+            Human miriam = new Human("Miriam", "Valery");
+            miriam.IntroduceMyself();
+
+            Human oscar = new Human("Oscar");
+            oscar.IntroduceMyself();
+
+            Human basicHuman = new Human();
+            basicHuman.IntroduceMyself();
 
             Console.ReadKey();
         }
